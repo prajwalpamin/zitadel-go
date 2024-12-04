@@ -394,7 +394,7 @@ func (c *managementServiceClient) GetUserByLoginNameGlobal(ctx context.Context, 
 
 func (c *managementServiceClient) ListUsers(ctx context.Context, in *ListUsersRequest, opts ...grpc.CallOption) (*ListUsersResponse, error) {
 	out := new(ListUsersResponse)
-	err := c.cc.Invoke(ctx, "/zitadel.management.v1.ManagementService/ListUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/zitadel.user.v2.UserService/ListUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
